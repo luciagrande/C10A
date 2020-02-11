@@ -5,21 +5,25 @@ import java.util.*;
 
 public class ScoreTrakker {
 	private ArrayList<Student> students= new ArrayList<Student>();
+	private String[] file = {"scores.txt", "badscore.txt", "nofile.txt"}; 
 
-	public void loadDataFromFile(String name) throws IOException{
+	public void loadDataFromFile(String name) throws FileNotFoundException{
 		FileReader reader = new FileReader(name);
 		Scanner in = new Scanner(reader);
 		while(in.hasNext()) {
 			Student student = new Student();
 
 			student.setName(in.next() +" " + in.next());
-			student.setScore(in.nextInt());
-			
-			students.add(student);
+			try {
+				student.setScore(Integer.parseInt(in.next()));
+				students.add(student);
+			} catch(NumberFormatException e) {
+				System.out.println(e);
+			}
+
 		}
 		
 		in.close();
-		reader.close();
 	}
 
 	public void printInOrder() {
@@ -30,14 +34,17 @@ public class ScoreTrakker {
 	}
 
 	public void processFiles()  {
-		try {
-			loadDataFromFile("scores.txt");
-			printInOrder();
+		for (String x : file) {
+			try {
+				loadDataFromFile(x);
+				printInOrder();
+			}
+			catch(IOException e) {
+				e.getCause();
+				System.out.println(e);
+			}
 		}
-		catch(IOException e) {
-			e.getCause();
-			System.out.println(e);
-		}
+		
 	}
 
 
