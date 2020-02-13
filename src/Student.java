@@ -1,8 +1,9 @@
+//Authors: Liam Morrissey and Lucy Grande
 
 public class Student implements Comparable<Student>{
 	private String name;
 	private Integer score;
-	
+
 	@Override
 	public String toString() {
 		return name + " " + score;
@@ -25,11 +26,12 @@ public class Student implements Comparable<Student>{
 		this.score = score;
 	}
 
+	//Comparison with respect to score
 	@Override
 	public int compareTo(Student o) {
 		return score - o.getScore();
 	}
-	
-	
+
+
 
 }
