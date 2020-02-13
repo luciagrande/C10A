@@ -1,0 +1,17 @@
+commit 34d8cbfb67ff04aed39936c8c88463a42ecf7d38
+Author: Liam Morrissey <liam.morrissey.family@gmail.com>
+Date:   Wed Feb 12 21:32:11 2020 -0700
+
+    add exceptions
+
+commit aaf9b23c10eb0d504d3b6fe4129a25577c91291d
+Author: Lucia Grande <luciagrande@mines.edu>
+Date:   Tue Feb 11 12:14:49 2020 -0700
+
+    second part
+
+commit 1fd4f3bfc8c9bdaba8f279be80537667cf0449b5
+Author: Lucia Grande <luciagrande@mines.edu>
+Date:   Tue Feb 11 12:06:46 2020 -0700
+
+    init commit
